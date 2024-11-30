@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decentralized Storage Platform</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header id="initial-header">
+    <h1>Decentralized Storage Platform</h1>
+    <nav class="center-nav">
+      <a href="#" onclick="showSection('initial-home')">Home</a>
+    </nav>
+  </header>
+  <header id="logged-in-header" style="display:none;">
+    <h1>Decentralized Storage Platform</h1>
+    <nav class="center-nav">
+      <a href="#" onclick="showSection('home')">Home</a>
+      <div class="profile-menu" onclick="toggleProfileMenu()"> 
+        <span id="profile-username">Profile</span> 
+        <div id="profile-options" class="profile-options"> 
+          <a href="#" id="profile-info"></a>
+          <a href="#" onclick="logout()">Logout</a> 
+        </div> 
+      </div>
+       
+    </nav>
+  </header>
+  
+  <main>
+    <section id="initial-home" class="section">
+      <h2>Welcome to the Future of Cloud Storage</h2>
+      <p>Our platform is a cutting-edge peer-to-peer (P2P) storage network designed to revolutionize the way you store and access your data. By leveraging the power of decentralization, we offer a secure, cost-effective, and scalable solution for all your storage needs.</p>
+
+      <h3>Key Features</h3>
+      <div class="features-container">
+        <div class="feature-box">
+          <h4>Decentralized File Storage</h4>
+          <p>Store your data securely across multiple nodes. Our system divides your data into small, manageable chunks and distributes them across various locations, enhancing both security and accessibility.</p>
+        </div>
+        <div class="feature-box">
+          <h4>P2P Storage Network</h4>
+          <p>Enable direct file transfers between users, eliminating the need for a centralized server. This reduces cloud storage costs and enhances the speed and efficiency of data transfer.</p>
+        </div>
+        <div class="feature-box">
+          <h4>Incentive Mechanism (Token-based)</h4>
+          <p>Earn cryptocurrency tokens by contributing storage space. Use these tokens to store your own files.</p>
+        </div>
+        <div class="feature-box">
+          <h4>Security (Data Encryption)</h4>
+          <p>Your data's security is our priority. Files are encrypted before being split into chunks and uploaded, ensuring that only you have the key to decrypt and access your files.</p>
+        </div>
+        <div class="feature-box">
+          <h4>Data Redundancy and Availability</h4>
+          <p>To prevent data loss, our platform employs redundancy mechanisms like replication and erasure coding. Multiple copies of each file are stored on different nodes, guaranteeing access even if some nodes go offline.</p>
+        </div>
+        <div class="feature-box">
+          <h4>Scalability</h4>
+          <p>Our network scales seamlessly as more users join. Our efficient search and retrieval system ensures fast access to your files, no matter how large the network grows.</p>
+        </div>
+      </div>
+
+      <h3>Join Us</h3>
+      <p>Experience the next generation of cloud storage. Join our decentralized network today and take control of your data like never before. Together, we can build a more secure, cost-effective, and accessible future for cloud storage.</p>
+
+      <div class="action-buttons">
+        <a href="#" class="action-button" onclick="showSection('login')">Login</a>
+        <a href="#" class="action-button" onclick="showSection('signup')">Sign Up</a>
+      </div>
+    </section>
+
+    <section id="login" class="section" style="display:none;">
+      <h2>Login</h2>
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <section id="signup" class="section" style="display:none;">
+      <h2>Sign Up</h2>
+      <form id="signup-form">
+        <input type="text" id="new-username" placeholder="Username" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="new-password" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+      </form>
+    </section>
+
+    <section id="home" class="section" style="display:none;">
+      <h2>Welcome to the Future of Cloud Storage</h2>
+      <p>Our platform is a cutting-edge peer-to-peer (P2P) storage network designed to revolutionize the way you store and access your data. By leveraging the power of decentralization, we offer a secure, cost-effective, and scalable solution for all your storage needs.</p>
+
+      <h3>Key Features</h3>
+      <div class="features-container">
+        <div class="feature-box">
+          <h4>Decentralized File Storage</h4>
+          <p>Store your data securely across multiple nodes. Our system divides your data into small, manageable chunks and distributes them across various locations, enhancing both security and accessibility.</p>
+        </div>
+        <div class="feature-box">
+          <h4>P2P Storage Network</h4>
+          <p>Enable direct file transfers between users, eliminating the need for a centralized server. This reduces cloud storage costs and enhances the speed and efficiency of data transfer.</p>
+        </div>
+        <div class="feature-box">
+          <h4>Incentive Mechanism (Token-based)</h4>
+          <p>Earn cryptocurrency tokens by contributing storage space. Use these tokens to store your own files.</p>
+        </div>
+        <div class="feature-box">
+          <h4>Security (Data Encryption)</h4>
+          <p>Your data's security is our priority. Files are encrypted before being split into chunks and uploaded, ensuring that only you have the key to decrypt and access your files.</p>
+        </div>
+        <div class="feature-box">
+          <h4>Data Redundancy and Availability</h4>
+          <p>To prevent data loss, our platform employs redundancy mechanisms like replication and erasure coding. Multiple copies of each file are stored on different nodes, guaranteeing access even if some nodes go offline.</p>
+        </div>
+        <div class="feature-box">
+          <h4>Scalability</h4>
+          <p>Our network scales seamlessly as more users join. Our efficient search and retrieval system ensures fast access to your files, no matter how large the network grows.</p>
+        </div>
+      </div>
+
+      <h3>Join Us</h3>
+      <p>Experience the next generation of cloud storage. Join our decentralized network today and take control of your data like never before. Together, we can build a more secure, cost-effective, and accessible future for cloud storage.</p>
+
+      <div class="action-buttons">
+        <a href="#" class="action-button" onclick="showSection('storage')">View Storage</a>
+        <a href="#" class="action-button" onclick="showSection('buy')">Buy Storage</a>
+        <a href="#" class="action-button" onclick="showSection('rent')">Rent Out Storage</a>
+      </div>
+    </section>
+
+    <section id="storage" class="section" style="display:none;">
+      <h2>Available Storage</h2>
+      <p>
+        Username: <span id="storage-username"></span>
+        Storage available:<span id="storage-amount">100 GB</span>
+        Price per GB:<span id="storage-price">$0.10</span>
+        <button id="buy-storage" class="button">Buy Storage</button>
+      </p>
+    </section>
+    
+    <section id="buy" class="section" style="display:none;">
+      <h2>Buy Storage</h2>
+      <form id="buy-form">
+        <label for="provider-username">Storage Provider Username:</label>
+        <input type="text" id="provider-username" required>
+        <label for="buy-amount">Amount of storage to buy (GB):</label>
+        <input type="number" id="buy-amount" required>
+        <button type="submit">Buy</button>
+      </form>
+    </section>
+    
+    <section id="rent" class="section" style="display:none;">
+      <h2>Rent Out Storage</h2>
+      <form id="rent-form">
+        <label for="rent-amount">Amount of storage to rent out (GB):</label>
+        <input type="number" id="rent-amount" required>
+        <label for="rent-price">Price per GB:</label>
+        <input type="number" id="rent-price" step="0.01" required>
+        <button type="submit">Rent Out</button>
+      </form>
+    </section>
+    
+  </main>
+  <footer>
+    <p>© 2024 Decentralized Cloud Storage. All rights reserved.</p>
+  </footer>
+  <div id="modal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <p id="modal-message"></p>
+    </div>
+  </div>
+  <script src="scripts.js"></script>
+</body>
+</html>
