@@ -35,18 +35,24 @@ document.getElementById('signup-form').addEventListener('submit', function (e) {
   }
 });
 
-// Example of handling form submissions for buy and rent out pages
 document.getElementById('buy-form').addEventListener('submit', function (e) {
   e.preventDefault();
   
-  const buyAmount = document.getElementById('buy-amount').value.trim();
+  const buyAmount = parseInt(document.getElementById('buy-amount').value.trim(), 10);
+  const availableStorage = parseInt(document.getElementById('storage-amount').textContent.trim(), 10);
+
   if (buyAmount) {
-    alert(`You have successfully bought ${buyAmount} GB of storage!`);
-    // Implement your buy logic here (e.g., API calls, updating storage, etc.)
+    if (buyAmount > availableStorage) {
+      alert('Error: The amount of storage you want to buy exceeds the available storage.');
+    } else {
+      alert(`You have successfully bought ${buyAmount} GB of storage!`);
+      // Implement your buy logic here (e.g., API calls, updating storage, etc.)
+    }
   } else {
     alert('Please enter the amount of storage to buy.');
   }
 });
+
 
 document.getElementById('rent-form').addEventListener('submit', function (e) {
   e.preventDefault();
